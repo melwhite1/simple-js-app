@@ -52,16 +52,16 @@ let pokemonRepository = (function() {
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.types = details.types;
+      pokemon.imageUrl = details.sprites.front_default;
+      pokemon.height = details.height;
+      pokemon.types = details.types.map((type) => type.type.name).join(',');
     }).catch(function (e) {
       console.error(e);
     });
   }
 
   function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
+    pokemonRepository.loadDetails(pokemon).then(function () {
       showModal(pokemon);
     });
   }
@@ -77,16 +77,12 @@ let pokemonRepository = (function() {
     let imageElement = $('<img class="pokemon-img">')
     imageElement.attr("src", pokemon.imageUrl);
     let heightElement = $('<p>' + 'Height : ' + pokemon.height + '</p>');
-    let weightElement = $('<p>' + 'Weight : ' + pokemon.weight + '</p>');
     let typeElement = $('<p>' + 'Types : ' + pokemon.types + '</p>');
-    let abilitiesElement = $('<p>' + 'Abilities : ' + pokemon.abilities + '</p>');
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
     modalBody.append(heightElement);
-    modalBody.append(weightElement);
     modalBody.append(typeElement);
-    modalBody.append(abilitiesElement);
 
 }
 

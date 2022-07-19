@@ -39,7 +39,7 @@ body {
   text-align: center;
 }
 
-.modal {
+.pokemon-modal {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
