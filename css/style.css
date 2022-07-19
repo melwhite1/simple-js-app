@@ -9,10 +9,8 @@ body {
   background-image: linear-gradient(red, yellow);
 }
 
-h1 {
+.navbar {
   text-align: center;
-  font-family: Ubuntu, sans-serif;
-  color: var(--text-color);
 }
 
 #modal-container {
