@@ -21,7 +21,6 @@ let pokemonRepository = (function() {
     buttonItem.innerText = pokemon.name;
     buttonItem.setAttribute("data-toggle", "modal");
     buttonItem.setAttribute("data-target", "#pokemon-modal");
-    $(buttonItem).addClass('button-class btn-block btn m1');
     pokemonItem.appendChild(buttonItem);
     pokemonList.appendChild(pokemonItem);
     buttonItem.addEventListener("click", function (event) {
@@ -48,7 +47,7 @@ let pokemonRepository = (function() {
     }
 
   function loadDetails(pokemon) {
-    let url = item.detailsUrl;
+    let url = pokemon.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
