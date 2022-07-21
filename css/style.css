@@ -14,10 +14,7 @@ body {
 }
 
 ul {
-  margin: 0 auto;
   list-style-type: none;
-  columns: 3;
-  column-gap: 250px;
 }
 
 .pokemon-container {
