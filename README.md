@@ -3,7 +3,7 @@
 ## How to run
 open html
 
-##dependencies
+## Dependencies
 ESlint, prettier
 
 ## Api
